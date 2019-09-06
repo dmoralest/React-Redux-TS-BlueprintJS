@@ -7,11 +7,13 @@ import { Alignment, Button, Classes, Navbar } from '@blueprintjs/core';
 import Routes from 'Routes';
 import NavItem from './NavItem';
 
+import Strings from 'Constants/Strings';
+
 const Nav: React.FC<INavProps> = ({ darkMode, onToggleTheme, location }) => {
 	return (
 		<Navbar className={Classes.MENU}>
 			<Navbar.Group align={Alignment.LEFT}>
-				<Navbar.Heading>Budget Buddy</Navbar.Heading>
+				<Navbar.Heading>{Strings.AppName}</Navbar.Heading>
 				<Navbar.Divider />
 				{Routes.map((route, index) => (
 					<NavItem key={`NavItem-${route.text}-${index}`} {...route} active={location.pathname === route.to} />
